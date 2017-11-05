@@ -32,14 +32,12 @@ public class AddTwoNumbers {
                     currentNode.next = new ListNode((l2.val + carry) % 10);
                     carry = (l2.val + carry) / 10;
                     l2 = l2.next;
-                } else {
-                    if (carry != 0) {
-                        currentNode.next = new ListNode(carry);
-                        break;
-                    }
                 }
             }
             currentNode = currentNode.next;
+        }
+        if (carry != 0) {
+            currentNode.next = new ListNode(carry);
         }
         return listNode.next;
     }
